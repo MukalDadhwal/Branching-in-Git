@@ -1,1 +1,2 @@
 This file belongs to branchA!
+this is a new line!
