@@ -1,0 +1,74 @@
+MAIN
+
+git branch <branch-name>
+- creates a new branch on the current commit
+
+git checkout <branch-name>
+- switch to HEAD to new <branch-name>
+
+git checkout -b <branch-name>
+- creates and switches to new branch
+
+git merge <branch-name>
+- merges branch-name into currrent branch(default is main) we can merge any brach into another it simply creates a new commit
+which has two parents. Now the branch contains all the work of both the branches
+
+> git merge main and git merge bugFix has a significant difference 
+
+git checkout <commit-hash>
+- takes the HEAD from pointing to the top commit commit to some other commit with <commit-hash>. The <commit-hash>s are unique across all the branches 
+
+git clean -f
+- to remove untracked files
+
+git log --oneline
+- beautify the git log commits into one line of summary
+
+git reset HEAD file(s)
+- removes the files from the staging area to current working directory
+
+git unstage file
+- similar to reset but removes only one file from the staging area
+
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+- beautify the git logs commits into one line of summary
+
+BRANCHES
+git branch -a
+- to see local and remote branches(currently) together
+
+git branch 
+- to see local branches
+
+git branch -vv
+- to see the upstreams/tracked branches of the local branches
+
+git branch -u <remote>/<branch>
+- to set up upstream for tracking.alternatively use -u with push to setup tracking automatically
+
+
+REMOTE 
+git pull = git fetch + git merge main and o/main
+
+git push = syncing the local remote repo and the actual remote repo
+
+git remote show <remote-name>
+- shows the remote branches + local branches are which branch(local) is tracking which remote branches
+
+git remote rename <old> <new-name>
+- renaming the remote branch
+
+git remote remove <name>
+- removing a remote
+
+
+
+RECOVERY
+
+git commit --amend
+- used to modify the last commit made in the local repository. A new file opened in the editor will display the commit which can be changed accordingly and all the files included in the staging area will be added to the new commit
+
+- doing a force push on the remote will replace the last commit with this new one
+
+git commit --amend -m "new msg"
+- a shorter form which changes the msg only

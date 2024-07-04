@@ -1,0 +1,45 @@
+# my .gitconfig as of now
+
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+[core]
+	editor = \"C:\\Users\\Surinder Kumar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+[http]
+	version = HTTP/1.1
+	postBuffer = 524288000
+[user]
+	email = mukaldadhwal@gmail.com
+	name = MukalDadhwal
+[safe]
+	directory = %(prefix)///wsl.localhost/Ubuntu-20.04/home/mukal/tezos-smartcontract-interacter
+
+[diff]
+	tool = Sourcetree
+[difftool "sourcetree"]
+	path = C:\\Users\\Surinder Kumar\\AppData\\Local\\SourceTree
+	cmd = "'' "
+[difftool]
+	prompt = false
+[merge]
+	tool = Sourcetree
+[mergetool "sourcetree"]
+	path = C:\\Users\\Surinder Kumar\\AppData\\Local\\SourceTree
+	cmd = "'' "
+	trustExitCode = true
+[mergetool]
+	prompt = false
+
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
